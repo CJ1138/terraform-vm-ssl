@@ -2,8 +2,8 @@ provider "google" {
   project = var.project
 }
 
-module "gcp-wordpress-vm" {
-  source            = "./tf-modules/gcp-wordpress-vm"
+module "gcp-https-server-vm" {
+  source            = "./tf-modules/gcp-https-server-vm"
   vm_name           = var.vm_name
   zone              = var.zone
   subnet            = module.gcp-network.subnet_id
@@ -34,6 +34,6 @@ module "gcp-iam" {
 module "gcp-https-load-balancer" {
   source        = "./tf-modules/gcp-https-load-balancer"
   domain        = var.domain
-  backend_group = module.gcp-wordpress-vm.instance_group_id
+  backend_group = module.gcp-https-server-vm.instance_group_id
   ip_address    = module.gcp-network.ip_address
 }
