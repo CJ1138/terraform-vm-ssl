@@ -17,12 +17,12 @@ project              = "my-gcp-project"
 vm_name              = "server-1"
 machine_type         = "e2-small"
 region               = "europe-west1"
-zone                 = "europe-west1-a"
+zone                 = "europe-west1-b"
 network              = "my-custom-network"
 subnet               = "eu-custom-subnet"
 cidr_range           = "10.0.0.0/24"
 ip_name              = "blog-ipv4"
-service_account_name = "server-vm"
+service_account_name = "server-1-vm"
 domain               = "example.com"
 
 ```
@@ -40,4 +40,4 @@ Once DNS settings have propagated, SSL cert may take a short while to complete p
 
 `$ gcloud compute ssl-certificates describe CERTIFICATE_NAME --format="get(managed.domainStatus)`
 
-Uncomment line 21 in `./tf-modules/gcp-https-server-vm/main.tf` to point to a local bash script for the VM to run at startup, to install any required packages.
+Uncomment line 21 in `./tf-modules/gcp-https-server-vm/main.tf` to point to a local bash script for the VM to run at startup, to install any required packages. The provided example installs the [Cloud Monitoring Agent](https://cloud.google.com/monitoring/agent/monitoring) and nginx. 

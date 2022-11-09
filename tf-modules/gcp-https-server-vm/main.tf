@@ -18,7 +18,7 @@ resource "google_compute_instance" "wp-server-vm" {
   }
 
   # Uncomment to add startup script from local file. Example:
-  #metadata_startup_script = "${file("./scripts/install-wp.sh")}"
+  #metadata_startup_script = "${file("./scripts/example-startup-script.sh")}"
 
   service_account {
     email  = var.server_vm_account
