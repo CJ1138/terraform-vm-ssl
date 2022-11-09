@@ -1,0 +1,11 @@
+project              = "" // GCP Project ID
+vm_name              = "" // Name for the VM
+machine_type         = "" // VM machine type (e.g. e2-small)
+region               = "" // Geographic region (e.g. europe-west1)
+zone                 = "" // Geographic zone (e.g. europe-west1-b)
+network              = "" // Name for new network
+subnet               = "" // Name for new subnet
+cidr_range           = "" // Subnet CIDR range (e.g. 10.0.0.0/24)
+ip_name              = "" // Name for reserved IP address (e.g. blog-ipv4)
+service_account_name = "" // Name for the VMs service account (e.g. server-vm)
+domain               = "" // Domain name under which to provision the SSL certificate
