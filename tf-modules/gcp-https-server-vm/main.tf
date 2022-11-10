@@ -1,4 +1,4 @@
-resource "google_compute_instance" "wp-server-vm" {
+resource "google_compute_instance" "server-vm" {
   name         = var.vm_name
   machine_type = var.machine_type
   zone         = var.zone
@@ -31,7 +31,7 @@ resource "google_compute_instance_group" "webserver_group" {
   description = "Unmanaged instance group with one HTTP(S) server VM"
   zone        = var.zone
   instances = [
-    google_compute_instance.wp-server-vm.id
+    google_compute_instance.server-vm.id
   ]
   named_port {
     name = "http"
